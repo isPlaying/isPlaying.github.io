@@ -13,7 +13,8 @@
     
 
     
-        <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536373839//RxJS v6import &amp;#123; interval &amp;#125; from &#39;rxjs&#39;;import &amp;#123; take &amp;#125; from">
+        <meta name="description" content="堆栈（英语：stack）又称为栈或堆叠，是计算机科学中的一种抽象数据类型，只允许在有序的线性数据集合的一端（称为堆栈顶端，英语：top）进行加入数据（英语：push）和移除数据（英语：pop）的运算。因而按照后进先出（LIFO, Last In First Out）的原理运作。
+1234567891">
     
 
     <!--Author-->
@@ -23,12 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="RxJS Subject">
+        <meta property="og:title" content="数据结构-栈的Python实现">
     
 
     <!--Open Graph Description-->
     
-        <meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839//RxJS v6import &amp;#123; interval &amp;#125; from &#39;rxjs&#39;;import &amp;#123; take &amp;#125; from">
+        <meta property="og:description" content="堆栈（英语：stack）又称为栈或堆叠，是计算机科学中的一种抽象数据类型，只允许在有序的线性数据集合的一端（称为堆栈顶端，英语：top）进行加入数据（英语：push）和移除数据（英语：pop）的运算。因而按照后进先出（LIFO, Last In First Out）的原理运作。
+1234567891">
     
 
     <!--Open Graph Site Name-->
@@ -55,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>RxJS Subject - Up!!!</title>
+    <title>数据结构-栈的Python实现 - Up!!!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -165,13 +167,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>RxJS Subject</h1>
+                    <h1>数据结构-栈的Python实现</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
                         
                         
-                            2019-09-08
+                            2020-01-07
                         
                     </span>
                 </div>
@@ -193,10 +195,8 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//RxJS v6</span></span><br><span class="line"><span class="keyword">import</span> &#123; interval &#125; <span class="keyword">from</span> <span class="string">'rxjs'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; take &#125; <span class="keyword">from</span> <span class="string">'rxjs/operators'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source = interval(<span class="number">1000</span>).pipe(take(<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> observableA = &#123;</span><br><span class="line">    next: <span class="function"><span class="params">value</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`A next: <span class="subst">$&#123;value&#125;</span>`</span>),</span><br><span class="line">    error: <span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`A error: <span class="subst">$&#123;error&#125;</span>`</span>),</span><br><span class="line">    complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'A complete!'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> observableB = &#123;</span><br><span class="line">    next: <span class="function"><span class="params">value</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`B next: <span class="subst">$&#123;value&#125;</span>`</span>),</span><br><span class="line">    error: <span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`B error: <span class="subst">$&#123;error&#125;</span>`</span>),</span><br><span class="line">    complete: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'B complete!'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> subject = &#123;</span><br><span class="line">    observers: [],</span><br><span class="line">    subscribe: <span class="function"><span class="keyword">function</span>(<span class="params">observer</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.observers.push(observer)</span><br><span class="line">    &#125;,</span><br><span class="line">    next: <span class="function"><span class="keyword">function</span>(<span class="params">value</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.observers.forEach(<span class="function"><span class="params">item</span> =&gt;</span> item.next(value))</span><br><span class="line">    &#125;,</span><br><span class="line">    error: <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.observers.forEach(<span class="function"><span class="params">item</span> =&gt;</span> item.error(error))</span><br><span class="line">    &#125;,</span><br><span class="line">    complete: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      <span class="keyword">this</span>.observers.forEach(<span class="function"><span class="params">item</span> =&gt;</span> item.complete())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">subject.subscribe(observableA)</span><br><span class="line">source.subscribe(subject)</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    subject.subscribe(observableB)</span><br><span class="line">&#125;, <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-
-<p><a href="https://rxjs-ehcc4y.stackblitz.io" target="_blank" rel="noopener">stackblitz</a></p>
-
+                <p><strong>堆栈</strong>（英语：stack）又称为<strong>栈</strong>或<strong>堆叠</strong>，是<a href="https://zh.wikipedia.org/wiki/計算機科學" target="_blank" rel="noopener">计算机科学</a>中的一种<a href="https://zh.wikipedia.org/wiki/抽象資料型別" target="_blank" rel="noopener">抽象数据类型</a>，只允许在有序的线性数据集合的一端（称为堆栈顶端，英语：top）进行加入数据（英语：push）和移除数据（英语：pop）的运算。因而按照后进先出（LIFO, Last In First Out）的原理运作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.items = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 栈是否为空</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isEmpty</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.items == []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将item加入栈顶，无返回值</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">push</span><span class="params">(self, item)</span>:</span></span><br><span class="line">        self.items.append(item)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 将栈顶数据项移除，返回移除项，栈被修改</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pop</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.items.pop()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 查看栈顶数据项，返回栈顶数据项，栈不被修改</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">peek</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.items[len(self.items) - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 返回栈中有多少个数据项</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">size</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.items)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    s = Stack()</span><br><span class="line">    print(s.isEmpty())</span><br><span class="line">    print(s.push(<span class="string">'hello'</span>))</span><br><span class="line">    print(s.isEmpty())</span><br><span class="line">    print(s.push(<span class="string">'world'</span>))</span><br><span class="line">    print(s.size())</span><br><span class="line">    print(s.peek())</span><br><span class="line">    print(s.pop())</span><br></pre></td></tr></table></figure>
 
                 
             </div>
