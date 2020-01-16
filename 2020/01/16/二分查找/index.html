@@ -13,6 +13,8 @@
     
 
     
+        <meta name="description" content="在计算机科学中，二分查找算法（英语：binary search algorithm），也称折半搜索算法（英语：half-interval search algorithm）[1]、对数搜索算法（英语：logarithmic search algorithm）[2]，是一种在有序数组中查找某一特定元素">
+    
 
     <!--Author-->
     
@@ -21,10 +23,12 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Up!!!">
+        <meta property="og:title" content="二分查找">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="在计算机科学中，二分查找算法（英语：binary search algorithm），也称折半搜索算法（英语：half-interval search algorithm）[1]、对数搜索算法（英语：logarithmic search algorithm）[2]，是一种在有序数组中查找某一特定元素">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +55,7 @@
 
     <!-- Title -->
     
-    <title>page - Archives - Up!!!</title>
+    <title>二分查找 - Up!!!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -153,129 +157,60 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>二分查找</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-01-16
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2019/10/01/about-redux/">
-        <h1 class="post-title archive">
-            about redux
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-10-01
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>在<a href="https://zh.wikipedia.org/wiki/计算机科学" target="_blank" rel="noopener">计算机科学</a>中，<strong>二分查找算法</strong>（英语：binary search algorithm），也称<strong>折半搜索算法</strong>（英语：half-interval search algorithm）<a href="https://zh.wikipedia.org/wiki/二分搜尋演算法#cite_note-1" target="_blank" rel="noopener">[1]</a>、<strong>对数搜索算法</strong>（英语：logarithmic search algorithm）<a href="https://zh.wikipedia.org/wiki/二分搜尋演算法#cite_note-FOOTNOTEKnuth1998§6.2.1_(" searching_an_ordered_table"),_subsection_"binary_search"-2" target="_blank" rel="noopener">[2]</a>，是一种在<a href="https://zh.wikipedia.org/wiki/有序数对" target="_blank" rel="noopener">有序数组</a>中查找某一特定元素的搜索<a href="https://zh.wikipedia.org/wiki/算法" target="_blank" rel="noopener">算法</a>。搜索过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜索过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。</p>
+<p><img src="https://i.loli.net/2020/01/16/8dJVFprR7UbC5K1.png" alt="Binary_search_into_array.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search</span><span class="params">(find_list, item)</span>:</span></span><br><span class="line">    first = <span class="number">0</span></span><br><span class="line">    last = len(find_list) - <span class="number">1</span></span><br><span class="line">    found = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">while</span> first &lt;= last <span class="keyword">and</span> <span class="keyword">not</span> found:</span><br><span class="line">        mid = (first + last) // <span class="number">2</span></span><br><span class="line">        <span class="keyword">if</span> find_list[mid] == item:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">if</span> item &lt; find_list[mid]:</span><br><span class="line">                last = mid - <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                first = mid + <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> found</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">test_list = [<span class="number">0</span>, <span class="number">3</span>, <span class="number">11</span>, <span class="number">23</span>, <span class="number">34</span>, <span class="number">48</span>, <span class="number">54</span>, <span class="number">75</span>, <span class="number">97</span>]</span><br><span class="line">print(binary_search(test_list, <span class="number">23</span>))</span><br></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2019/09/21/oh-my-zsh配置指北/">
-        <h1 class="post-title archive">
-            oh-my-zsh配置指北
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-09-21
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2019/09/18/冒泡排序/">
-        <h1 class="post-title archive">
-            冒泡排序
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-09-18
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/09/16/数据结构之二叉树/">
-        <h1 class="post-title archive">
-            数据结构之二叉树
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-09-16
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/09/08/RxJS-Subject/">
-        <h1 class="post-title archive">
-            RxJS Subject
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-09-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/08/31/Python-使用zipfile压缩目录/">
-        <h1 class="post-title archive">
-            Python 使用zipfile压缩目录
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-08-31
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2019/08/25/hello-world/">
-        <h1 class="post-title archive">
-            Hello World
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2019-08-25
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-        <li class="previous"><a href="/archives/">&larr;  Newer Posts</a></li>
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
