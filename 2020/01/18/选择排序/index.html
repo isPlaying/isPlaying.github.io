@@ -13,6 +13,9 @@
     
 
     
+        <meta name="description" content="选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。
+选择排序的主要优点与数据移动有关。如果某">
+    
 
     <!--Author-->
     
@@ -21,10 +24,13 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Up!!!">
+        <meta property="og:title" content="选择排序">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="选择排序（Selection sort）是一种简单直观的排序算法。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。
+选择排序的主要优点与数据移动有关。如果某">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +38,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +57,7 @@
 
     <!-- Title -->
     
-    <title>Archives - Up!!!</title>
+    <title>选择排序 - Up!!!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -153,168 +159,60 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Archives</h1>
+                <div class="post-heading">
+                    <h1>选择排序</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-01-18
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2020/01/18/选择排序/">
-        <h1 class="post-title archive">
-            选择排序
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-18
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p><strong>选择排序</strong>（Selection sort）是一种简单直观的<a href="https://zh.wikipedia.org/wiki/排序算法" target="_blank" rel="noopener">排序算法</a>。它的工作原理如下。首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。</p>
+<p>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的表进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding:utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">selection_sort</span><span class="params">(test_list)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> fill_slot <span class="keyword">in</span> range(len(test_list) - <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>):</span><br><span class="line">        position_of_max = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> location <span class="keyword">in</span> range(<span class="number">1</span>, fill_slot + <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> test_list[location] &gt; test_list[position_of_max]:</span><br><span class="line">                position_of_max = location</span><br><span class="line">        temp = test_list[fill_slot]</span><br><span class="line">        test_list[fill_slot] = test_list[position_of_max]</span><br><span class="line">        test_list[position_of_max] = temp</span><br><span class="line">    <span class="keyword">return</span> test_list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">one_list = [<span class="number">12</span>, <span class="number">32</span>, <span class="number">52</span>, <span class="number">76</span>, <span class="number">81</span>, <span class="number">25</span>, <span class="number">61</span>, <span class="number">51</span>]</span><br><span class="line">print(selection_sort(one_list))</span><br></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2020/01/16/二分查找/">
-        <h1 class="post-title archive">
-            二分查找
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-16
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-                <div class="post-preview">
-    <a href="/2020/01/14/找零问题/">
-        <h1 class="post-title archive">
-            找零问题
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-14
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/13/汉诺塔/">
-        <h1 class="post-title archive">
-            汉诺塔
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-13
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/12/递归/">
-        <h1 class="post-title archive">
-            递归
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-12
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/11/数据结构-有序链表的Python实现/">
-        <h1 class="post-title archive">
-            数据结构-有序链表的Python实现
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-11
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/10/数据结构-无序链表的Python实现/">
-        <h1 class="post-title archive">
-            数据结构-无序链表的Python实现
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-10
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/09/约瑟夫问题/">
-        <h1 class="post-title archive">
-            约瑟夫问题
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-09
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/08/数据结构-队列的Python实现/">
-        <h1 class="post-title archive">
-            数据结构-队列的Python实现
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-08
-    </p>
-</div>
-            
-                <div class="post-preview">
-    <a href="/2020/01/07/数据结构-栈的Python实现/">
-        <h1 class="post-title archive">
-            数据结构-栈的Python实现
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2020-01-07
-    </p>
-</div>
-            
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/archives/page/2/">Older Posts  &rarr;</a></li>
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
