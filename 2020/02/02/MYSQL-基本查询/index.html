@@ -202,8 +202,17 @@
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">&#123;* | &lt;字段列名&gt;&#125; </span><br><span class="line">[ </span><br><span class="line"><span class="keyword">FROM</span> &lt;表 <span class="number">1</span>&gt;, &lt;表 <span class="number">2</span>&gt;… </span><br><span class="line">[<span class="keyword">WHERE</span> &lt;表达式&gt; </span><br><span class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;<span class="keyword">group</span> <span class="keyword">by</span> definition&gt; </span><br><span class="line">[<span class="keyword">HAVING</span> &lt;expression&gt; [&#123;&lt;<span class="keyword">operator</span>&gt; &lt;expression&gt;&#125;…]] </span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;<span class="keyword">order</span> <span class="keyword">by</span> definition&gt;] </span><br><span class="line">[<span class="keyword">LIMIT</span>[&lt;<span class="keyword">offset</span>&gt;,] &lt;<span class="keyword">row</span> <span class="keyword">count</span>&gt;] </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 其中，各条子句的含义如下：</span><br><span class="line">  - &#123;*|&lt;字段列名&gt;&#125;包含星号通配符的字段列表，表示查询的字段，其中字段列至少包含一个字段名称，如果要查询多个字段，多个字段之间要用逗号隔开，最后一个字段后不要加逗号。</span><br><span class="line">  - FROM&lt;表1&gt;，&lt;表2&gt;…，表1和表2表示查询数据的来源，可以是单个或多个。</span><br><span class="line">  - WHERE子句是可选项，如果选择该项，将限定查询行必须满足的查询条件。</span><br><span class="line">  - GROUP BY&lt;字段&gt;，该子句告诉MySQL如何显示查询出来的数据，并按照指定的字段分组。</span><br><span class="line">  - [ORDER BY&lt;字段&gt;]，该子句告诉MySQL按什么样的顺序显示查询出来的数据，可以进行的排序有升序（ASC）和降序（DESC）。</span><br><span class="line">  - [LIMIT[&lt;offset&gt;，]&lt;row count&gt;]，该子句告诉MySQL每次显示查询出来的数据条数。</span><br></pre></td></tr></table></figure>
-
+<ul>
+<li>其中，各条子句的含义如下：<ul>
+<li>{*|&lt;字段列名&gt;}包含星号通配符的字段列表，表示查询的字段，其中字段列至少包含一个字段名称，如果要查询多个字段，多个字段之间要用逗号隔开，最后一个字段后不要加逗号。</li>
+<li>FROM&lt;表1&gt;，&lt;表2&gt;…，表1和表2表示查询数据的来源，可以是单个或多个。</li>
+<li>WHERE子句是可选项，如果选择该项，将限定查询行必须满足的查询条件。</li>
+<li>GROUP BY&lt;字段&gt;，该子句告诉MySQL如何显示查询出来的数据，并按照指定的字段分组。</li>
+<li>[ORDER BY&lt;字段&gt;]，该子句告诉MySQL按什么样的顺序显示查询出来的数据，可以进行的排序有升序（ASC）和降序（DESC）。</li>
+<li>[LIMIT[<offset>，]<row count>]，该子句告诉MySQL每次显示查询出来的数据条数。</row></offset></li>
+</ul>
+</li>
+</ul>
 <ul>
 <li>创建数据表tb_students_info</li>
 </ul>
