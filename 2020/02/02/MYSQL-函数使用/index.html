@@ -233,7 +233,7 @@ use school;
 <ul>
 <li>计算第一条记录中学生的年龄，并计算birthday字段中的值在一年中的位置。</li>
 </ul>
-<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">YEAR</span>(<span class="keyword">CURDATE</span>() - <span class="keyword">YEAR</span>(birthday) <span class="keyword">AS</span> age, <span class="keyword">DAYOFYEAR</span>(birthday) <span class="keyword">AS</span> <span class="keyword">days</span> <span class="keyword">FROM</span> student_info;</code></pre>
+<pre><code class="sql"><span class="keyword">SELECT</span> <span class="keyword">YEAR</span>(<span class="keyword">CURDATE</span>()) - <span class="keyword">YEAR</span>(birthday) <span class="keyword">AS</span> age, <span class="keyword">DAYOFYEAR</span>(birthday) <span class="keyword">AS</span> <span class="keyword">days</span> <span class="keyword">FROM</span> student_info;</code></pre>
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/2/170058f147d79bae?w=2464&h=372&f=png&s=183321" alt></p>
 
 
