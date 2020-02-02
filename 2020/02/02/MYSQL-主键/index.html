@@ -15,7 +15,7 @@
     
         <meta name="description" content="主键，又称主码（英语：primary key或unique key）。数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据表只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。
 
-在创建表时设置主键约束1CREATE TABLE tb_emp3 (id INT(11)">
+在创建表时设置主键约束  1CREATE TABLE tb_emp3 (id INT(1">
     
 
     <!--Author-->
@@ -32,7 +32,7 @@
     
         <meta property="og:description" content="主键，又称主码（英语：primary key或unique key）。数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据表只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。
 
-在创建表时设置主键约束1CREATE TABLE tb_emp3 (id INT(11)">
+在创建表时设置主键约束  1CREATE TABLE tb_emp3 (id INT(1">
     
 
     <!--Open Graph Site Name-->
@@ -199,22 +199,22 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <p><strong>主键</strong>，又称<strong>主码</strong>（英语：primary key或unique key）。<a href="https://zh.wikipedia.org/wiki/数据库表" target="_blank" rel="noopener">数据库表</a>中对储存数据对象予以唯一和完整标识的<a href="https://zh.wikipedia.org/w/index.php?title=数据列&action=edit&redlink=1" target="_blank" rel="noopener">数据列</a>或属性的组合。一个数据表只能有一个主键，且主键的取值不能缺失，即不能为<a href="https://zh.wikipedia.org/wiki/空值" target="_blank" rel="noopener">空值</a>（Null）。</p>
 <ul>
-<li>在创建表时设置主键约束<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tb_emp3 (id INT(11) PRIMARY KEY, name VARCHAR(25), deptId INT(11), salary FLOAT);</span><br></pre></td></tr></table></figure>
+<li>在创建表时设置主键约束  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_emp3 (<span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) PRIMARY <span class="keyword">KEY</span>, <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>), deptId <span class="built_in">INT</span>(<span class="number">11</span>), salary <span class="built_in">FLOAT</span>);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/2/170043e62e396da5?w=2382&h=686&f=png&s=370436" alt></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tb_emp4 (id INT(11), name VARCHAR(25), deptId INT(11), salary FLOAT, PRIMARY KEY(id));</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_emp4 (<span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>), <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>), deptId <span class="built_in">INT</span>(<span class="number">11</span>), salary <span class="built_in">FLOAT</span>, PRIMARY <span class="keyword">KEY</span>(<span class="keyword">id</span>));</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/2/170043e74dd48d2c?w=2360&h=676&f=png&s=375493" alt></p>
 <ul>
-<li>在创建表时设置复合主键<br>假设表中没有主键id，为了唯一确定一个员工，可以把name、deptId联合起来作为主键，输入的SQL语句和运行结果如下所示。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tb_emp5 (name VARCHAR(25), deptId INT(11), salary FLOAT, PRIMARY KEY(name, deptId));</span><br></pre></td></tr></table></figure>
+<li>在创建表时设置复合主键<br>假设表中没有主键id，为了唯一确定一个员工，可以把name、deptId联合起来作为主键，输入的SQL语句和运行结果如下所示。  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_emp5 (<span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>), deptId <span class="built_in">INT</span>(<span class="number">11</span>), salary <span class="built_in">FLOAT</span>, PRIMARY <span class="keyword">KEY</span>(<span class="keyword">name</span>, deptId));</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/2/170043e86f85f0a2?w=2414&h=618&f=png&s=343407" alt></p>
 <ul>
-<li>修改表时添加主键约束<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE tb_emp2 ADD PRIMARY KEY(id);</span><br></pre></td></tr></table></figure>
+<li>修改表时添加主键约束  <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_emp2 <span class="keyword">ADD</span> PRIMARY <span class="keyword">KEY</span>(<span class="keyword">id</span>);</span><br></pre></td></tr></table></figure>
 
 </li>
 </ul>
