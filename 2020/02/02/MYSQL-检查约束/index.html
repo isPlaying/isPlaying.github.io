@@ -13,6 +13,13 @@
     
 
     
+        <meta name="description" content="CHECK约束可以通过CREATE TABLE或ALTER TABLE语句实现，根据用户实际的完整性要求来定义。它可以分别对列或表实施CHECK约束。
+语法如下
+1CHECK &amp;lt;表达式&amp;gt;
+
+
+创建tb_emp7数据表，要求salary字段值大于0且小于10000，输入的SQL语句和运行结">
+    
 
     <!--Author-->
     
@@ -21,10 +28,17 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Up!!!">
+        <meta property="og:title" content="MYSQL-检查约束">
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="CHECK约束可以通过CREATE TABLE或ALTER TABLE语句实现，根据用户实际的完整性要求来定义。它可以分别对列或表实施CHECK约束。
+语法如下
+1CHECK &amp;lt;表达式&amp;gt;
+
+
+创建tb_emp7数据表，要求salary字段值大于0且小于10000，输入的SQL语句和运行结">
     
 
     <!--Open Graph Site Name-->
@@ -32,7 +46,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="article">
     
 
     <!--Page Cover-->
@@ -51,7 +65,7 @@
 
     <!-- Title -->
     
-    <title>Up!!!</title>
+    <title>MYSQL-检查约束 - Up!!!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -154,188 +168,79 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Up!!!</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>MYSQL-检查约束</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-02
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2020/02/02/MYSQL-检查约束/">
-        <h2 class="post-title">
-            MYSQL-检查约束
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/02/MYSQL-唯一约束/">
-        <h2 class="post-title">
-            MYSQL-唯一约束
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/02/MYSQL-外键/">
-        <h2 class="post-title">
-            MYSQL-外键
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/02/MYSQL-主键/">
-        <h2 class="post-title">
-            MYSQL-主键
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/02/01/mysql基本操作/">
-        <h2 class="post-title">
-            mysql基本操作
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-02-01
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/01/19/插入排序/">
-        <h2 class="post-title">
-            插入排序
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-01-19
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/01/18/选择排序/">
-        <h2 class="post-title">
-            选择排序
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-01-18
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/01/16/二分查找/">
-        <h2 class="post-title">
-            二分查找
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-01-16
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/01/14/找零问题/">
-        <h2 class="post-title">
-            找零问题
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-01-14
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2020/01/13/汉诺塔/">
-        <h2 class="post-title">
-            汉诺塔
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2020-01-13
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
             
 
-            <ul class="pager">
-    
-    
-        <li class="next"><a href="/page/2/">Older Posts  &rarr;</a></li>
-    
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>CHECK约束可以通过CREATE TABLE或ALTER TABLE语句实现，根据用户实际的完整性要求来定义。它可以分别对列或表实施CHECK约束。</p>
+<p>语法如下</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CHECK</span> &lt;表达式&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建tb_emp7数据表，要求salary字段值大于0且小于10000，输入的SQL语句和运行结果如下所示。  </li>
 </ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_emp7 (<span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) PRIMARY <span class="keyword">KEY</span>, <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>), deptId <span class="built_in">INT</span>(<span class="number">11</span>), salary <span class="built_in">FLOAT</span>, <span class="keyword">CHECK</span>(salary&gt;<span class="number">0</span> <span class="keyword">AND</span> salary&lt;<span class="number">100</span>), <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(deptId) <span class="keyword">REFERENCES</span> tb_dept1(<span class="keyword">id</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17004672469cdac3?w=2880&h=160&f=png&s=177069" alt></p>
+<ul>
+<li>在修改表时设置检查约束  </li>
+</ul>
+<p>修改tb_emp7，要求id字段值大于0，输入的SQL语句和运行结果如下所示。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_emp7 <span class="keyword">ADD</span> <span class="keyword">CONSTRAINT</span> check_id <span class="keyword">CHECK</span>(<span class="keyword">id</span>&gt;<span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/1700467394ff33d7?w=2082&h=164&f=png&s=130625" alt></p>
+<ul>
+<li>删除检查约束  </li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> &lt;数据表名&gt; <span class="keyword">DROP</span> <span class="keyword">CONSTRAINT</span> &lt;检查约束名&gt;;</span><br></pre></td></tr></table></figure>
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />
