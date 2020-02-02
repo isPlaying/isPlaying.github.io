@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="基本语法
+
+12345678910SELECT &amp;#123;* | &amp;lt;字段列名&amp;gt;&amp;#125; [ FROM &amp;lt;表 1&amp;gt;, &amp;lt;表 2&amp;gt;… [WHERE &amp;lt;表达式&amp;gt; [GROUP BY &amp;lt;group by definition&amp;gt; [HAVING">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="isPlaying">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="MYSQL-基本查询">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="基本语法
+
+12345678910SELECT &amp;#123;* | &amp;lt;字段列名&amp;gt;&amp;#125; [ FROM &amp;lt;表 1&amp;gt;, &amp;lt;表 2&amp;gt;… [WHERE &amp;lt;表达式&amp;gt; [GROUP BY &amp;lt;group by definition&amp;gt; [HAVING">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Up!!!">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>MYSQL-基本查询 - Up!!!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>MYSQL-基本查询</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-02
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul>
+<li>基本语法</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> </span><br><span class="line">&#123;* | &lt;字段列名&gt;&#125; </span><br><span class="line">[ </span><br><span class="line"><span class="keyword">FROM</span> &lt;表 <span class="number">1</span>&gt;, &lt;表 <span class="number">2</span>&gt;… </span><br><span class="line">[<span class="keyword">WHERE</span> &lt;表达式&gt; </span><br><span class="line">[<span class="keyword">GROUP</span> <span class="keyword">BY</span> &lt;<span class="keyword">group</span> <span class="keyword">by</span> definition&gt; </span><br><span class="line">[<span class="keyword">HAVING</span> &lt;expression&gt; [&#123;&lt;<span class="keyword">operator</span>&gt; &lt;expression&gt;&#125;…]] </span><br><span class="line">[<span class="keyword">ORDER</span> <span class="keyword">BY</span> &lt;<span class="keyword">order</span> <span class="keyword">by</span> definition&gt;] </span><br><span class="line">[<span class="keyword">LIMIT</span>[&lt;<span class="keyword">offset</span>&gt;,] &lt;<span class="keyword">row</span> <span class="keyword">count</span>&gt;] </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- 其中，各条子句的含义如下：</span><br><span class="line">  - &#123;*|&lt;字段列名&gt;&#125;包含星号通配符的字段列表，表示查询的字段，其中字段列至少包含一个字段名称，如果要查询多个字段，多个字段之间要用逗号隔开，最后一个字段后不要加逗号。</span><br><span class="line">  - FROM&lt;表1&gt;，&lt;表2&gt;…，表1和表2表示查询数据的来源，可以是单个或多个。</span><br><span class="line">  - WHERE子句是可选项，如果选择该项，将限定查询行必须满足的查询条件。</span><br><span class="line">  - GROUP BY&lt;字段&gt;，该子句告诉MySQL如何显示查询出来的数据，并按照指定的字段分组。</span><br><span class="line">  - [ORDER BY&lt;字段&gt;]，该子句告诉MySQL按什么样的顺序显示查询出来的数据，可以进行的排序有升序（ASC）和降序（DESC）。</span><br><span class="line">  - [LIMIT[&lt;offset&gt;，]&lt;row count&gt;]，该子句告诉MySQL每次显示查询出来的数据条数。</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>创建数据表tb_students_info</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tb_students_info (<span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) PRIMARY <span class="keyword">KEY</span>, deptId <span class="built_in">INT</span>(<span class="number">11</span>), age <span class="built_in">INT</span>(<span class="number">11</span>), gender <span class="built_in">VARCHAR</span>(<span class="number">10</span>), height <span class="built_in">INT</span>(<span class="number">11</span>), loginDate DATETIME);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>忘记添加name字段了，插入名字</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tb_students_info <span class="keyword">ADD</span> <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">10</span>) <span class="keyword">after</span> <span class="keyword">id</span>;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>插入一条记录</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tb_students_info <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Dany'</span>, <span class="number">1</span>, <span class="number">25</span>, <span class="string">'F'</span>, <span class="number">160</span>, <span class="string">'2015-03-10'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005e433082c13e?w=1980&h=1422&f=png&s=695425" alt></p>
+<ul>
+<li>继续新增多条记录（此操作同上）</li>
+<li>从tb_students_info表中检索所有字段的数据，执行结果如下所示。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005e582a76ac91?w=2230&h=582&f=png&s=324636" alt></p>
+<ul>
+<li>查询表中指定字段</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, age <span class="keyword">FROM</span> tb_students_info;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005e7ab7ed783a?w=1752&h=582&f=png&s=210503" alt></p>
+<ul>
+<li>使用DISTINCT关键字去除结果中的重复行</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> &lt;字段名&gt; <span class="keyword">FROM</span> &lt;表名&gt;;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在查询时给表和字段设置别名</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;表名&gt; [AS] &lt;别名&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> stu.name, stu.age <span class="keyword">FROM</span> tb_students_info <span class="keyword">AS</span> stu;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005e8949cfb5e4?w=1796&h=576&f=png&s=200952" alt></p>
+<ul>
+<li>指定列的别名</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;列名&gt; [AS] &lt;列表名&gt;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">AS</span> student_name, age <span class="keyword">AS</span> student_age <span class="keyword">FROM</span> tb_students_info;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005e8b0f2ab5ab?w=2024&h=580&f=png&s=230680" alt></p>
+<ul>
+<li>使用LIMIT关键字指定查询结果的行数</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;LIMIT&gt; [&lt;位置偏移量&gt;,] &lt;行数&gt;</span><br></pre></td></tr></table></figure>
+
+<p>第一个参数“位置偏移量”指示MySQL从哪一行开始显示，是一个可选参数，如果不指定“位置偏移量”，将会从表中的第一条记录开始（第一条记录的位置偏移量是0，第二条记录的位置偏移量是1，以此类推）；第二个参数“行数”指示返回的记录条数。  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">LIMIT</span> <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005ea3dda826ad?w=2088&h=476&f=png&s=252484" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">LIMIT</span> <span class="number">2</span>, <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005ea50d8ab1ae?w=1682&h=452&f=png&s=211449" alt></p>
+<ul>
+<li>使用ORDER BY对查询结果进行排序</li>
+<li>查询tb_students_info表的height字段值，并对其进行排序。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">ORDER</span> <span class="keyword">BY</span> height;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005eaf6db13045?w=1846&h=596&f=png&s=317151" alt></p>
+<ul>
+<li>带WHERE关键字的条件查询</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, height <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> height=<span class="number">172</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005eb735d5b3a5?w=1878&h=376&f=png&s=144968" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> age&gt;<span class="number">23</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005eb8a33554ad?w=1902&h=490&f=png&s=247682" alt></p>
+<ul>
+<li>多条件的查询语句</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> age&gt;<span class="number">23</span> <span class="keyword">AND</span> height&gt;<span class="number">170</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005eba01fffcda?w=2002&h=384&f=png&s=193733" alt></p>
+<ul>
+<li>使用LIKE的模糊查询</li>
+<li>查找所有以’J’字母开头的学生姓名</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'J%'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005ec9f6f2cadb?w=2144&h=438&f=png&s=165792" alt></p>
+<ul>
+<li>查找所有包含’a’字母的学生姓名</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'%a%'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005ecb720e7c21?w=1690&h=418&f=png&s=143210" alt></p>
+<ul>
+<li>查找所有以’e’结尾，且’e’前面有3个字母的学生姓名</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> <span class="keyword">name</span> <span class="keyword">LIKE</span> <span class="string">'___e'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005eccec56eff5?w=1826&h=374&f=png&s=130833" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> loginDate <span class="keyword">BETWEEN</span> <span class="string">'2015-06-17'</span> <span class="keyword">AND</span> <span class="string">'2016-03-12'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/2/17005edbc9652189?w=2372&h=1238&f=png&s=748563" alt></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 isPlaying<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
