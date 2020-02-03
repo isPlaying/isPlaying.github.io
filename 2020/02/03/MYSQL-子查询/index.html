@@ -221,7 +221,7 @@
 
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17009f56fd89ad8f?w=2690&h=368&f=png&s=183354" alt></p>
 <ul>
-<li>在tb_departments表中查询dept_name等于“Computer”的学院id，然后在tb_students_info表中查询所有该学院的学生的姓名，输入的SQL语句和执行过程如下所示。</li>
+<li>在tb_departments表中查询dept_name不等于“Computer”的学院id，然后在tb_students_info表中查询所有该学院的学生的姓名，输入的SQL语句和执行过程如下所示。</li>
 </ul>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span> <span class="keyword">FROM</span> tb_students_info <span class="keyword">WHERE</span> dept_id &lt;&gt; (<span class="keyword">SELECT</span> dept_id <span class="keyword">FROM</span> tb_departments <span class="keyword">WHERE</span> dept_name=<span class="string">'Computer'</span>);</span><br></pre></td></tr></table></figure>
 
