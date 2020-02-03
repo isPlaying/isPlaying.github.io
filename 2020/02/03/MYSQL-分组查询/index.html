@@ -236,6 +236,42 @@ GROUP BY 语句用于结合聚合函数，根据一个或多个列对结果集�
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> dept_id, <span class="keyword">GROUP_CONCAT</span>(<span class="keyword">name</span>) <span class="keyword">AS</span> <span class="keyword">names</span> <span class="keyword">FROM</span> tb_students_info <span class="keyword">GROUP</span> <span class="keyword">BY</span> dept_id <span class="keyword">HAVING</span> <span class="keyword">COUNT</span>(<span class="keyword">name</span>)&gt;<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
 <p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700a616798d2b4e?w=2880&h=406&f=png&s=225445" alt></p>
+<ul>
+<li>案例</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa1cc59b0f6f?w=1396&h=1550&f=png&s=1031097" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">class</span> ( <span class="keyword">id</span> <span class="built_in">INT</span>(<span class="number">11</span>) PRIMARY <span class="keyword">KEY</span>, <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>), grade <span class="built_in">VARCHAR</span>(<span class="number">10</span>), t_name <span class="built_in">VARCHAR</span>(<span class="number">10</span>) );</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> stu (<span class="keyword">id</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>, <span class="keyword">name</span> <span class="built_in">VARCHAR</span>(<span class="number">25</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, sex <span class="built_in">VARCHAR</span>(<span class="number">2</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>, class_id <span class="built_in">INT</span>, age <span class="built_in">INT</span>, login_date <span class="built_in">DATE</span>, <span class="keyword">CONSTRAINT</span> fk_class_student <span class="keyword">FOREIGN</span> <span class="keyword">KEY</span>(class_id) <span class="keyword">REFERENCES</span> <span class="keyword">class</span>(<span class="keyword">id</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">class</span> <span class="keyword">VALUES</span> (<span class="number">01</span>,<span class="string">'MATH'</span>,<span class="string">'One'</span>,<span class="string">'JONH'</span>), (<span class="number">02</span>,<span class="string">'HISTORY'</span>,<span class="string">'Two'</span>,<span class="string">'SIMON'</span>), (<span class="number">03</span>,<span class="string">'PHYSICS'</span>,<span class="string">'Three'</span>,<span class="string">'JACKSON'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> stu <span class="keyword">VALUES</span> (<span class="number">101</span>,<span class="string">'JAMES'</span>,<span class="string">'M'</span>,<span class="number">01</span>,<span class="number">20</span>,<span class="string">'2014-07-31'</span>), (<span class="number">102</span>,<span class="string">'HOWARD'</span>,<span class="string">'M'</span>,<span class="number">01</span>,<span class="number">24</span>,<span class="string">'2015-07-31'</span>), (<span class="number">103</span>,<span class="string">'SMITH'</span>,<span class="string">'M'</span>,<span class="number">01</span>,<span class="number">22</span>,<span class="string">'2013-03-15'</span>), (<span class="number">201</span>,<span class="string">'ALLEN'</span>,<span class="string">'F'</span>,<span class="number">02</span>,<span class="number">21</span>,<span class="string">'2017-05-01'</span>), (<span class="number">202</span>,<span class="string">'JONES'</span>,<span class="string">'F'</span>,<span class="number">02</span>,<span class="number">23</span>,<span class="string">'2015-07-31'</span>), (<span class="number">301</span>,<span class="string">'KING'</span>,<span class="string">'F'</span>,<span class="number">03</span>,<span class="number">22</span>,<span class="string">'2013-01-01'</span>), (<span class="number">302</span>,<span class="string">'ADAMS'</span>,<span class="string">'M'</span>,<span class="number">03</span>,<span class="number">20</span>,<span class="string">'2014-06-01'</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在表stu中，查询每个班级年龄最大的学生的信息。<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.class_id, b.name, <span class="keyword">MAX</span>(a.age) <span class="keyword">FROM</span> stu a, <span class="keyword">class</span> b <span class="keyword">WHERE</span> a.class_id=b.id;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa1f61db359b?w=2880&h=482&f=png&s=265700" alt></p>
+<ul>
+<li>查询学生JAMES所在班级的名称和班主任姓名。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.name, b.name, b.t_name <span class="keyword">FROM</span> stu a, <span class="keyword">class</span> b <span class="keyword">WHERE</span> a.class_id=b.id <span class="keyword">AND</span> a.name=<span class="string">'James'</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa228c9a077c?w=2416&h=370&f=png&s=174500" alt></p>
+<ul>
+<li>使用连接查询，查询所有学生的班级信息。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.id, a.name, b.name <span class="keyword">FROM</span> stu a, <span class="keyword">class</span> b <span class="keyword">WHERE</span> a.class_id=b.id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa216a12f8d6?w=2452&h=716&f=png&s=341410" alt></p>
+<ul>
+<li>在stu表中，计算每个班级各有多少名学生。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> b.name, <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> stu a, <span class="keyword">class</span> b <span class="keyword">WHERE</span> a.class_id=b.id <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa2066c4b1ce?w=2628&h=518&f=png&s=240662" alt></p>
+<ul>
+<li>在stu表中，计算不同班级学生的平均年龄。</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> b.name, <span class="keyword">AVG</span>(age) <span class="keyword">FROM</span> stu a, <span class="keyword">class</span> b <span class="keyword">WHERE</span> a.class_id=b.id <span class="keyword">GROUP</span> <span class="keyword">BY</span> b.name;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/1700aa1e0c3cf3d8?w=2600&h=482&f=png&s=250188" alt></p>
 
 
                 
