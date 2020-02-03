@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="首先创建数据表tb_departments
+12345create table tb_departments (dept_id INT PRIMARY KEY, dept_name VARCHAR(25), dept_call INT, dept_type VARCHAR(10));DESC tb_">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="isPlaying">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="MYSQL-多表查询">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="首先创建数据表tb_departments
+12345create table tb_departments (dept_id INT PRIMARY KEY, dept_name VARCHAR(25), dept_call INT, dept_type VARCHAR(10));DESC tb_">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Up!!!">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>MYSQL-多表查询 - Up!!!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>MYSQL-多表查询</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-02-03
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>首先创建数据表tb_departments</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tb_departments (dept_id <span class="built_in">INT</span> PRIMARY <span class="keyword">KEY</span>, dept_name <span class="built_in">VARCHAR</span>(<span class="number">25</span>), dept_call <span class="built_in">INT</span>, dept_type <span class="built_in">VARCHAR</span>(<span class="number">10</span>));</span><br><span class="line"></span><br><span class="line">DESC tb_departments;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tb_departments <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'Computer'</span>, <span class="number">11111</span>, <span class="string">'A'</span>), (<span class="number">2</span>, <span class="string">'Math'</span>, <span class="number">22222</span>, <span class="string">'A'</span>), (<span class="number">3</span>, <span class="string">'Chinese'</span>, <span class="number">33333</span>, <span class="string">'B'</span>), (<span class="number">4</span>, <span class="string">'Economy'</span>, <span class="number">44444</span>, <span class="string">'B'</span>), (<span class="number">5</span>, <span class="string">'History'</span>, <span class="number">55555</span>, <span class="string">'B'</span>);</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fb26268e702?w=2880&h=1738&f=png&s=1097839" alt></p>
+<p>学生表信息如下</p>
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fbb40455a4a?w=1838&h=586&f=png&s=306728" alt></p>
+<ul>
+<li>内连接查询</li>
+</ul>
+<p>内连接是通过在查询中设置连接条件的方式，来移除查询结果集中某些数据行后的交叉连接。简单来说，就是利用条件表达式来消除交叉连接的某些数据行，在FROM子句中使用关键字INNER JOIN连接两张表，并使用ON子句来设置连接条件。如果没有任何条件，INNER JOIN和CROSS JOIN在语法上是等同的，两者可以互换。  </p>
+<p>内连接是系统默认的表连接，所以在FROM子句后可以省略INNER关键字，只用关键字JOIN。使用内连接后，FROM子句中的ON子句可用来设置连接表的条件。 </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> &lt;列名<span class="number">1</span>，列名<span class="number">2</span> …&gt; </span><br><span class="line"><span class="keyword">FROM</span> &lt;表名<span class="number">1</span>&gt; <span class="keyword">INNER</span> <span class="keyword">JOIN</span> &lt;表名<span class="number">2</span>&gt; [ <span class="keyword">ON</span>子句]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, age, dept_name <span class="keyword">FROM</span> tb_students_info, tb_departments <span class="keyword">WHERE</span> tb_students_info.dept_id=tb_departments.dept_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fb4657c6075?w=2874&h=618&f=png&s=339309" alt></p>
+<p>使用INNER JOIN语法进行内连接查询</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, age, dept_name <span class="keyword">FROM</span> tb_students_info <span class="keyword">INNER</span> <span class="keyword">JOIN</span> tb_departments <span class="keyword">ON</span> tb_students_info.dept_id=tb_departments.dept_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fb5b63c5dad?w=2870&h=634&f=png&s=353472" alt></p>
+<ul>
+<li>外连接查询</li>
+</ul>
+<p>内连接是在交叉连接的结果集上返回满足条件的记录；而外连接先将连接的表分为基表和参考表，再以基表为依据返回满足和不满足条件的记录。</p>
+<p>外连接更加注重两张表之间的关系。按照连接表的顺序，可以分为左外连接和右外连接。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, dept_name <span class="keyword">FROM</span> tb_students_info s <span class="keyword">LEFT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> tb_departments d <span class="keyword">ON</span> s.dept_id=d.dept_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fb77d10218b?w=2522&h=580&f=png&s=281384" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">name</span>, dept_name <span class="keyword">FROM</span> tb_students_info s <span class="keyword">RIGHT</span> <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> tb_departments d <span class="keyword">ON</span> s.dept_id=d.dept_id;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fb8ec8d75da?w=2634&h=680&f=png&s=327557" alt></p>
+<ul>
+<li>自连接查询</li>
+</ul>
+<p>自连接是将一个表和它自身进行连接，也是内连接的一种，同样使用INNER JOIN或者JOIN关键字来进行连接。</p>
+<p>如果需要在一个表中查找具有相同列值的行，就可以考虑用自连接。注意，在使用自连接的时候，需要为表指定两个不同的别名，且对所有查询列的引用必须使用表别名的限定，否则SELECT操作会失败。</p>
+<p>查询id为1的学生所在学院的其他学生的信息，输入的SQL语句和执行结果如下所示。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s1.id, s1.name <span class="keyword">FROM</span> tb_students_info s1, tb_students_info s2 <span class="keyword">WHERE</span> s1.dept_id=s2.dept_id <span class="keyword">AND</span> s2.id=<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/2/3/17008fea5e7151d1?w=2578&h=434&f=png&s=208161" alt></p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 isPlaying<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
