@@ -200,22 +200,32 @@ SET UP THE REPOSITORY
                 <p><strong>Install using the repository</strong></p>
 <p><strong>SET UP THE REPOSITORY</strong></p>
 <p>1.Install required packages. yum-utils provides the yum-config-manager utility, and device-mapper-persistent-data and lvm2 are required by the devicemapper storage driver.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install -y yum-utils \</span></span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum install -y yum-utils \</span><br><span class="line">  device-mapper-persistent-data \</span><br><span class="line">  lvm2</span><br></pre></td></tr></table></figure>
 
 <p>2.Use the following command to set up the stable repository.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum-config-manager \</span></span><br><span class="line">  --add-repo \</span><br><span class="line">  https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum-config-manager \</span><br><span class="line">  --add-repo \</span><br><span class="line">  https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
 
 <p><strong>INSTALL DOCKER CE</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install docker-ce</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo yum install docker-ce</span><br></pre></td></tr></table></figure>
 
 <p><strong>Start Docker</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo systemctl start docker</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 
 <p>3.Verify that Docker CE is installed correctly by running the hello-world image.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo docker run hello-world</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo docker run hello-world</span><br></pre></td></tr></table></figure>
 
 <p><strong>更换镜像源</strong></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">cd /etc/docker</span><br><span class="line"></span><br><span class="line">vim daemon.json</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	"registry-mirrors": ["https://mj9kvemk.mirror.aliyuncs.com"]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+<p>进入目录</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/docker</span><br></pre></td></tr></table></figure>
+
+<p>编辑文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim daemon.json</span><br></pre></td></tr></table></figure>
+
+<p>添加源</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "registry-mirrors": ["https://mj9kvemk.mirror.aliyuncs.com"]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重启docker</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
 
 <p><a href="http://dockerdocs.gclearning.cn/install/linux/docker-ce/centos/" target="_blank" rel="noopener">docker-guides</a></p>
 
