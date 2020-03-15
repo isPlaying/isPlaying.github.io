@@ -13,6 +13,12 @@
     
 
     
+        <meta name="description" content="本文基于RxJS v6进行学习RxJS操作符之mergeMap,switchMap,concatMap
+mergeMap
+合并多个Observable, 不会取消之前的流。
+
+当main被订阅之后，source流每隔三秒进行触发一次，当触发的同时，内部的流也被触发，但source流每隔三秒触发后，之">
+    
 
     <!--Author-->
     
@@ -25,6 +31,12 @@
     
 
     <!--Open Graph Description-->
+    
+        <meta property="og:description" content="本文基于RxJS v6进行学习RxJS操作符之mergeMap,switchMap,concatMap
+mergeMap
+合并多个Observable, 不会取消之前的流。
+
+当main被订阅之后，source流每隔三秒进行触发一次，当触发的同时，内部的流也被触发，但source流每隔三秒触发后，之">
     
 
     <!--Open Graph Site Name-->
@@ -189,7 +201,32 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <p>本文基于RxJS v6进行学习RxJS操作符之mergeMap,switchMap,concatMap</p>
+<h3 id="mergeMap"><a href="#mergeMap" class="headerlink" title="mergeMap"></a>mergeMap</h3><ul>
+<li>合并多个Observable, 不会取消之前的流。</li>
+</ul>
+<p>当main被订阅之后，source流每隔三秒进行触发一次，当触发的同时，内部的流也被触发，但source流每隔三秒触发后，之前没执行完的流并不会被中断。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span>, interval &#125; <span class="keyword">from</span> <span class="string">"rxjs"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; mergeMap, take &#125; <span class="keyword">from</span> <span class="string">"rxjs/operators"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source$ = interval(<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">const</span> main = source$</span><br><span class="line">  .pipe(mergeMap(<span class="function"><span class="params">()</span> =&gt;</span> interval(<span class="number">500</span>).pipe(take(<span class="number">10</span>))))</span><br><span class="line">  .subscribe(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/3/15/170dd7121abdf07f?w=886&h=1498&f=png&s=86052" alt></p>
+<h3 id="switchMap"><a href="#switchMap" class="headerlink" title="switchMap"></a>switchMap</h3><ul>
+<li>合并多个Observable, 会取消之前的流。</li>
+</ul>
+<p>当main被订阅之后，source流每隔三秒进行触发一次，当触发的同时，内部的流也被触发，但source流每隔三秒触发后，会取消之前的流。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span>, interval &#125; <span class="keyword">from</span> <span class="string">"rxjs"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; switchMap, take &#125; <span class="keyword">from</span> <span class="string">"rxjs/operators"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source$ = interval(<span class="number">3000</span>);</span><br><span class="line"><span class="keyword">const</span> main = source$</span><br><span class="line">  .pipe(switchMap(<span class="function"><span class="params">()</span> =&gt;</span> interval(<span class="number">500</span>).pipe(take(<span class="number">10</span>))))</span><br><span class="line">  .subscribe(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/3/15/170dd7ac3964e886?w=884&h=1206&f=png&s=75341" alt></p>
+<h3 id="concatMap"><a href="#concatMap" class="headerlink" title="concatMap"></a>concatMap</h3><ul>
+<li>以序列化的方式等待前一个流执行完毕后执行下一个流。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// RxJS v6+</span></span><br><span class="line"><span class="keyword">import</span> &#123; <span class="keyword">of</span>, interval &#125; <span class="keyword">from</span> <span class="string">"rxjs"</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; concatMap, mergeMap, take, delay &#125; <span class="keyword">from</span> <span class="string">"rxjs/operators"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> source$ = <span class="keyword">of</span>(<span class="number">2000</span>, <span class="number">1000</span>, <span class="number">3000</span>);</span><br><span class="line"><span class="keyword">const</span> concatMapExample = source$</span><br><span class="line">  .pipe(concatMap(<span class="function"><span class="params">val</span> =&gt;</span> <span class="keyword">of</span>(<span class="string">`Delayed by:<span class="subst">$&#123;val&#125;</span>ms`</span>).pipe(delay(val))))</span><br><span class="line">  .subscribe(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`With ConcatMap: <span class="subst">$&#123;item&#125;</span>`</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> mergeMapExample = source$</span><br><span class="line">  .pipe(</span><br><span class="line">    delay(<span class="number">8000</span>),</span><br><span class="line">    mergeMap(<span class="function"><span class="params">val</span> =&gt;</span> <span class="keyword">of</span>(<span class="string">`Delayed by:<span class="subst">$&#123;val&#125;</span>ms`</span>).pipe(delay(val)))</span><br><span class="line">  )</span><br><span class="line">  .subscribe(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">`With MergeMap: <span class="subst">$&#123;item&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://user-gold-cdn.xitu.io/2020/3/15/170dda4239448ba6?w=880&h=734&f=png&s=97528" alt></p>
+<p><a href="https://rxjs.dev/api" target="_blank" rel="noopener">RxJS API List</a></p>
+<p><a href="https://www.learnrxjs.io/learn-rxjs/operators/transformation/mergemap" target="_blank" rel="noopener">mergeMap</a></p>
+<p><a href="https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap" target="_blank" rel="noopener">switchMap</a></p>
+<p><a href="https://www.learnrxjs.io/learn-rxjs/operators/transformation/concatmap" target="_blank" rel="noopener">concatMap</a></p>
+
 
                 
             </div>
