@@ -248,75 +248,94 @@ BNF范式巴科斯范式 是一种用于表示上下文无关文法的语言，�
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression :</span><br><span class="line">    BitwiseORExpression</span><br><span class="line">    LogicalANDExpression &amp;&amp; BitwiseORExpression</span><br><span class="line">LogicalANDExpressionNoIn :</span><br><span class="line">    BitwiseORExpressionNoIn</span><br><span class="line">    LogicalANDExpressionNoIn &amp;&amp; BitwiseORExpressionNoIn</span><br><span class="line">LogicalORExpression :</span><br><span class="line">    LogicalANDExpression</span><br><span class="line">    LogicalORExpression || LogicalANDExpression</span><br><span class="line">LogicalORExpressionNoIn :</span><br><span class="line">    LogicalANDExpressionNoIn</span><br><span class="line">    LogicalORExpressionNoIn || LogicalANDExpressionNoIn</span><br></pre></td></tr></table></figure>
 
 <h4 id="Punctuators"><a href="#Punctuators" class="headerlink" title="Punctuators"></a><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-7.7" target="_blank" rel="noopener">Punctuators</a></h4><p><strong>Syntax</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Punctuator :: one of</span><br><span class="line">&#123;	&#125;	(	)	[	]</span><br><span class="line">.	;	,	&lt;	&gt;	&lt;=</span><br><span class="line">&gt;=	==	!=	===	!==	</span><br><span class="line">+	-	*	%	++	--</span><br><span class="line">&lt;&lt;	&gt;&gt;	&gt;&gt;&gt;	&amp;	|	^</span><br><span class="line">!	~	&amp;&amp;	||	?	:</span><br><span class="line">=	+=	-=	*=	%=	&lt;&lt;=</span><br><span class="line">&gt;&gt;=	&gt;&gt;&gt;=	&amp;=	|=	^=	</span><br><span class="line">DivPunctuator :: one of</span><br><span class="line">/	/=		</span><br><span class="line">~~~		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Exercise</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Punctuator :: one of</span><br><span class="line">&#123;	&#125;	(	)	[	]</span><br><span class="line">.	;	,	&lt;	&gt;	&lt;=</span><br><span class="line">&gt;=	==	!=	===	!==	</span><br><span class="line">+	-	*	%	++	--</span><br><span class="line">&lt;&lt;	&gt;&gt;	&gt;&gt;&gt;	&amp;	|	^</span><br><span class="line">!	~	&amp;&amp;	||	?	:</span><br><span class="line">=	+=	-=	*=	%=	&lt;&lt;=</span><br><span class="line">&gt;&gt;=	&gt;&gt;&gt;=	&amp;=	|=	^=	</span><br><span class="line">DivPunctuator :: one of</span><br><span class="line">/	/=</span><br></pre></td></tr></table></figure>
 
-<p><number> ::= “0” | “1” | …… | “9”</number></p>
-<p><decimalnumber> ::= “0” | ((“1” | “2” | …… | “9”) <number>* )</number></decimalnumber></p>
-<p><additiveexpression> ::= <decimalnumber> |<br>    <additiveexpression> “+” <decimalnumber></decimalnumber></additiveexpression></decimalnumber></additiveexpression></p>
-<p><multiplicativeexpression> ::= <multiplicativeexpression> |<br>    <multiplicativeexpression> “*” <decimalnumber></decimalnumber></multiplicativeexpression></multiplicativeexpression></multiplicativeexpression></p>
-<p><logicalexpression> ::= <additiveexpression> |<br>    <logicalexpression> “||” <additiveexpression> |<br>    <logicalexpression> “&amp;&amp;” <additiveexpression></additiveexpression></logicalexpression></additiveexpression></logicalexpression></additiveexpression></logicalexpression></p>
-<pre><code>
-[ECMAScript® 2019 Language Specification](http://www.ecma-international.org/ecma-262/)
+<p><a href="http://www.ecma-international.org/ecma-262/" target="_blank" rel="noopener">ECMAScript® 2019 Language Specification</a></p>
+<p>Exercise</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;Number&gt; ::= &quot;0&quot; | &quot;1&quot; | ...... | &quot;9&quot;</span><br><span class="line"></span><br><span class="line">&lt;DecimalNumber&gt; ::= &quot;0&quot; | ((&quot;1&quot; | &quot;2&quot; | ...... | &quot;9&quot;) &lt;Number&gt;* )</span><br><span class="line"></span><br><span class="line">&lt;AdditiveExpression&gt; ::= &lt;DecimalNumber&gt; | </span><br><span class="line">    &lt;AdditiveExpression&gt; &quot;+&quot; &lt;DecimalNumber&gt;</span><br><span class="line"></span><br><span class="line">&lt;MultiplicativeExpression&gt; ::= &lt;MultiplicativeExpression&gt; |</span><br><span class="line">    &lt;MultiplicativeExpression&gt; &quot;*&quot; &lt;DecimalNumber&gt;</span><br><span class="line"></span><br><span class="line">&lt;LogicalExpression&gt; ::= &lt;AdditiveExpression&gt; |</span><br><span class="line">    &lt;LogicalExpression&gt; &quot;||&quot; &lt;AdditiveExpression&gt; | </span><br><span class="line">    &lt;LogicalExpression&gt; &quot;&amp;&amp;&quot; &lt;AdditiveExpression&gt;</span><br></pre></td></tr></table></figure>
 
+<h3 id="图灵完备性"><a href="#图灵完备性" class="headerlink" title="图灵完备性"></a>图灵完备性</h3><ul>
+<li>图灵完备性<ul>
+<li>命令式——图灵机<ul>
+<li>goto</li>
+<li>if和while</li>
+</ul>
+</li>
+<li>声明式——lambda<ul>
+<li>递归</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="动态与静态"><a href="#动态与静态" class="headerlink" title="动态与静态"></a>动态与静态</h3><ul>
+<li>动态：<ul>
+<li>在用户的设备/在线服务器上</li>
+<li>产品实际运行时</li>
+<li>Runtime</li>
+</ul>
+</li>
+<li>静态：<ul>
+<li>在程序员的设备上</li>
+<li>产品开发时</li>
+<li>Compiletime</li>
+</ul>
+</li>
+</ul>
+<h3 id="类型系统"><a href="#类型系统" class="headerlink" title="类型系统"></a>类型系统</h3><ul>
+<li>动态类型系统与静态类型系统</li>
+<li>强类型与弱类型<ul>
+<li>String + Number</li>
+<li>String == Boolean</li>
+</ul>
+</li>
+<li>复合类型<ul>
+<li>结构体</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/Signature/Function" target="_blank" rel="noopener">函数签名</a></li>
+</ul>
+</li>
+<li>子类型<ul>
+<li>逆变/协变</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000012372372" target="_blank" rel="noopener">通俗的方式理解动态类型，静态类型；强类型，弱类型</a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98" target="_blank" rel="noopener">协变与逆变</a></p>
+<h3 id="一般命令式编程语言"><a href="#一般命令式编程语言" class="headerlink" title="一般命令式编程语言"></a>一般命令式编程语言</h3><ul>
+<li>Atom <ul>
+<li>Identifier</li>
+<li>Literal</li>
+</ul>
+</li>
+<li>Expression<ul>
+<li>Atom</li>
+<li>Operator</li>
+<li>Punctuator</li>
+</ul>
+</li>
+<li>Statement<ul>
+<li>Expression</li>
+<li>Keyword</li>
+<li>Punctutor</li>
+</ul>
+</li>
+<li>Structure<ul>
+<li>Function</li>
+<li>Class</li>
+<li>Process</li>
+<li>Namespace</li>
+<li>……</li>
+</ul>
+</li>
+<li>Program<ul>
+<li>Program</li>
+<li>Module</li>
+<li>Package</li>
+<li>Library</li>
+</ul>
+</li>
+</ul>
 
-### 图灵完备性
-
-- 图灵完备性
-  - 命令式——图灵机
-    - goto
-    - if和while
-  - 声明式——lambda
-    - 递归
-
-### 动态与静态
-- 动态：
-  - 在用户的设备/在线服务器上
-  - 产品实际运行时
-  - Runtime
-- 静态：
-  - 在程序员的设备上
-  - 产品开发时
-  - Compiletime
-
-### 类型系统
-- 动态类型系统与静态类型系统
-- 强类型与弱类型
-  - String + Number
-  - String == Boolean
-- 复合类型
-  - 结构体
-  - [函数签名](https://developer.mozilla.org/zh-CN/docs/Glossary/Signature/Function)
-- 子类型
-  - 逆变/协变
-
-[通俗的方式理解动态类型，静态类型；强类型，弱类型](https://segmentfault.com/a/1190000012372372)
-
-[协变与逆变](https://zh.wikipedia.org/wiki/%E5%8D%8F%E5%8F%98%E4%B8%8E%E9%80%86%E5%8F%98)
-
-### 一般命令式编程语言
-
-- Atom 
-  - Identifier
-  - Literal
-- Expression
-  - Atom
-  - Operator
-  - Punctuator
-- Statement
-  - Expression
-  - Keyword
-  - Punctutor
-- Structure
-  - Function
-  - Class
-  - Process
-  - Namespace
-  - ……
-- Program
-  - Program
-  - Module
-  - Package
-  - Library</code></pre>
 
                 
             </div>
