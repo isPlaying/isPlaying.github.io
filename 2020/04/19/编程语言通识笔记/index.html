@@ -248,7 +248,7 @@ BNF范式巴科斯范式 是一种用于表示上下文无关文法的语言，�
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">LogicalANDExpression :</span><br><span class="line">    BitwiseORExpression</span><br><span class="line">    LogicalANDExpression &amp;&amp; BitwiseORExpression</span><br><span class="line">LogicalANDExpressionNoIn :</span><br><span class="line">    BitwiseORExpressionNoIn</span><br><span class="line">    LogicalANDExpressionNoIn &amp;&amp; BitwiseORExpressionNoIn</span><br><span class="line">LogicalORExpression :</span><br><span class="line">    LogicalANDExpression</span><br><span class="line">    LogicalORExpression || LogicalANDExpression</span><br><span class="line">LogicalORExpressionNoIn :</span><br><span class="line">    LogicalANDExpressionNoIn</span><br><span class="line">    LogicalORExpressionNoIn || LogicalANDExpressionNoIn</span><br></pre></td></tr></table></figure>
 
 <h4 id="Punctuators"><a href="#Punctuators" class="headerlink" title="Punctuators"></a><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-7.7" target="_blank" rel="noopener">Punctuators</a></h4><p><strong>Syntax</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Punctuator :: one of</span><br><span class="line">&#123;	&#125;	(	)	[	]</span><br><span class="line">.	;	,	&lt;	&gt;	&lt;=</span><br><span class="line">&gt;=	==	!=	===	!==	</span><br><span class="line">+	-	*	%	++	--</span><br><span class="line">&lt;&lt;	&gt;&gt;	&gt;&gt;&gt;	&amp;	|	^</span><br><span class="line">!	~	&amp;&amp;	||	?	:</span><br><span class="line">=	+=	-=	*=	%=	&lt;&lt;=</span><br><span class="line">&gt;&gt;=	&gt;&gt;&gt;=	&amp;=	|=	^=	</span><br><span class="line">DivPunctuator :: one of</span><br><span class="line">/	/=		</span><br><span class="line">~~~		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[ECMAScript® 2019 Language Specification](http://www.ecma-international.org/ecma-262/)</span><br><span class="line"></span><br><span class="line">Exercise</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Punctuator :: one of</span><br><span class="line">&#123;	&#125;	(	)	[	]</span><br><span class="line">.	;	,	&lt;	&gt;	&lt;=</span><br><span class="line">&gt;=	==	!=	===	!==	</span><br><span class="line">+	-	*	%	++	--</span><br><span class="line">&lt;&lt;	&gt;&gt;	&gt;&gt;&gt;	&amp;	|	^</span><br><span class="line">!	~	&amp;&amp;	||	?	:</span><br><span class="line">=	+=	-=	*=	%=	&lt;&lt;=</span><br><span class="line">&gt;&gt;=	&gt;&gt;&gt;=	&amp;=	|=	^=	</span><br><span class="line">DivPunctuator :: one of</span><br><span class="line">/	/=		</span><br><span class="line">~~~		</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Exercise</span><br></pre></td></tr></table></figure>
 
 <p><number> ::= “0” | “1” | …… | “9”</number></p>
 <p><decimalnumber> ::= “0” | ((“1” | “2” | …… | “9”) <number>* )</number></decimalnumber></p>
@@ -256,6 +256,9 @@ BNF范式巴科斯范式 是一种用于表示上下文无关文法的语言，�
 <p><multiplicativeexpression> ::= <multiplicativeexpression> |<br>    <multiplicativeexpression> “*” <decimalnumber></decimalnumber></multiplicativeexpression></multiplicativeexpression></multiplicativeexpression></p>
 <p><logicalexpression> ::= <additiveexpression> |<br>    <logicalexpression> “||” <additiveexpression> |<br>    <logicalexpression> “&amp;&amp;” <additiveexpression></additiveexpression></logicalexpression></additiveexpression></logicalexpression></additiveexpression></logicalexpression></p>
 <pre><code>
+[ECMAScript® 2019 Language Specification](http://www.ecma-international.org/ecma-262/)
+
+
 ### 图灵完备性
 
 - 图灵完备性
@@ -313,8 +316,7 @@ BNF范式巴科斯范式 是一种用于表示上下文无关文法的语言，�
   - Program
   - Module
   - Package
-  - Library
-</code></pre>
+  - Library</code></pre>
 
                 
             </div>
