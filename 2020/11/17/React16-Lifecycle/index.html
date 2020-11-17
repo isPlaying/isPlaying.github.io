@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+
+    
+
+    
+        <meta name="description" content="挂载阶段：React15 vs React16.3React15
+1234constructor()componentWillMount()render()componentDidMount()
+
+React16.3
+1234constructor()getDerivedStateFromProps">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="isPlaying">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="React16 Lifecycle">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="挂载阶段：React15 vs React16.3React15
+1234constructor()componentWillMount()render()componentDidMount()
+
+React16.3
+1234constructor()getDerivedStateFromProps">
+    
+
+    <!--Open Graph Site Name-->
+        <meta property="og:site_name" content="Up!!!">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+    
+        <meta property="og:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+        <meta name="twitter:card" content="summary_large_image">
+
+    
+
+    
+        <meta name="twitter:image" content="http://yoursite.comhttp://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg">
+    
+
+    <!-- Title -->
+    
+    <title>React16 Lifecycle - Up!!!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Configurable Title</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/klugjo/hexo-theme-clean-blog">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>React16 Lifecycle</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2020-11-17
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h4 id="挂载阶段：React15-vs-React16-3"><a href="#挂载阶段：React15-vs-React16-3" class="headerlink" title="挂载阶段：React15 vs React16.3"></a>挂载阶段：React15 vs React16.3</h4><p>React15</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>()</span><br><span class="line">componentWillMount()</span><br><span class="line">render()</span><br><span class="line">componentDidMount()</span><br></pre></td></tr></table></figure>
+
+<p>React16.3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">constructor</span>()</span><br><span class="line">getDerivedStateFromProps()</span><br><span class="line">render()</span><br><span class="line">componentDidMount()</span><br></pre></td></tr></table></figure>
+
+<p>对比可见，废弃了componentWillMount方法，新增了getDerivedStateFromProps方法</p>
+<p>React16对render方法进行了一些改进。React16之前render方法必须返回单个元素，而React16允许我们返回元素数组和字符串。</p>
+<p>getDerivedStateFromProps在挂载和更新阶段都会出现。</p>
+<h4 id="static-getDerivedStateFromProps-props-state"><a href="#static-getDerivedStateFromProps-props-state" class="headerlink" title="static getDerivedStateFromProps(props, state)"></a>static getDerivedStateFromProps(props, state)</h4><ol>
+<li>getDerivedStateFromProps是一个静态方法，不能访问组件实例</li>
+<li>来自父组件的props和组件自身的state</li>
+<li>props传入的内容不需要影响到你的state，则需要返回一个null</li>
+</ol>
+<p>getDerivedStateFromProps方法对state的更新动作并非“覆盖”式的更新，而是针对某个属性的定向更新。</p>
+<h4 id="更新阶段：React15-vs-React16"><a href="#更新阶段：React15-vs-React16" class="headerlink" title="更新阶段：React15 vs React16"></a>更新阶段：React15 vs React16</h4><p>React15</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">componentWillReceiveProps()</span><br><span class="line">shouldComponentUpdate()</span><br><span class="line">componentWillUpdate()</span><br><span class="line">render()</span><br><span class="line">componentDidUpdate()</span><br></pre></td></tr></table></figure>
+
+<p>React16.3</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">getDerivedStateFromProps()</span><br><span class="line">shouldComponentUpdate()</span><br><span class="line">render()</span><br><span class="line">getSnapshotBeforeUpdate()</span><br><span class="line">componentDidUpdate()</span><br></pre></td></tr></table></figure>
+
+<h5 id="更新阶段，在React16-3中只有父组件更新才会触发getDerivedStateFromProps生命周期。而在React16-4中，任何因素触发的组件更新流程都会触发getDerivedStateFromProps。"><a href="#更新阶段，在React16-3中只有父组件更新才会触发getDerivedStateFromProps生命周期。而在React16-4中，任何因素触发的组件更新流程都会触发getDerivedStateFromProps。" class="headerlink" title="更新阶段，在React16.3中只有父组件更新才会触发getDerivedStateFromProps生命周期。而在React16.4中，任何因素触发的组件更新流程都会触发getDerivedStateFromProps。"></a>更新阶段，在React16.3中只有父组件更新才会触发getDerivedStateFromProps生命周期。而在React16.4中，任何因素触发的组件更新流程都会触发getDerivedStateFromProps。</h5><h4 id="getSnapshotBeforeUpdate-prevProps-prevState"><a href="#getSnapshotBeforeUpdate-prevProps-prevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps, prevState)"></a>getSnapshotBeforeUpdate(prevProps, prevState)</h4><p>A snapshot value (or null) should be returned.</p>
+<ol>
+<li><p>getSnapshotBeforeUpdate的返回值会作为第三个参数给到componentDidUpdate，它的执行时机是在render方法后，真实DOM更新前。</p>
+</li>
+<li><p>同时获取到更新前的真实DOM和更新前后的state和props的信息</p>
+</li>
+</ol>
+<h4 id="卸载阶段：React15与React16-无变化"><a href="#卸载阶段：React15与React16-无变化" class="headerlink" title="卸载阶段：React15与React16 无变化"></a>卸载阶段：React15与React16 无变化</h4><p><a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noopener">React LifeCycle Diagram</a></p>
+<h4 id="初识Fiber"><a href="#初识Fiber" class="headerlink" title="初识Fiber"></a>初识Fiber</h4><p>Fiber是React16对React核心算法的一次重写 </p>
+<p>Fiber会使原本同步的渲染过程编程异步的</p>
+<p>触发组件更新，React会构建新的虚拟DOM树，通过与上一次的虚拟DOM树进行diff，实现对DOM的定向更新，这个过程是一个递归的过程。同步渲染的递归调用栈非常深，只有最底层的调用返回了，整个渲染过程才会开始逐层返回，这个漫长且不可打断的更新过程将会带来用户体验层面的巨大风险，同步渲染一旦开始便会牢牢抓住主线程不放，直到递归彻底完成。在这个过程中浏览器没有办法处理任何渲染之外的事情，会进入无法处理用户交互的状态，因此渲染时间稍微长一点，页面就会进入卡顿。Fiber会将一个大的更新任务拆解为许多小任务，每当执行完一个小任务的时候，渲染线程都会把主线程交回去，看看有没有优先级更高的工作要处理，确保不会出现其他任务被卡，进而避免同步渲染带来的卡顿。在这个过程中，渲染线程不再一去不回头，而是可以被打断的，这就是异步渲染。</p>
+<p>Fiber架构的重要特征就是可以被打断的异步渲染模式</p>
+<h4 id="React16的生命周期被分为了render和commit两个阶段"><a href="#React16的生命周期被分为了render和commit两个阶段" class="headerlink" title="React16的生命周期被分为了render和commit两个阶段"></a>React16的生命周期被分为了render和commit两个阶段</h4><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/dc842d3e34974c509f321547b5a28da0~tplv-k3u1fbpfcp-watermark.image" alt></p>
+<p>“Render 阶段”<br>纯净且不包含副作用。可能会被 React 暂停，中止或重新启动。</p>
+<p>“Pre-commit 阶段”<br>可以读取 DOM。</p>
+<p>“Commit 阶段”<br>可以使用 DOM，运行副作用，安排更新。</p>
+<p>Render阶段可以被打断，而commit阶段总是同步执行的</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2020 isPlaying<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
